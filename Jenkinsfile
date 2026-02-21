@@ -5,7 +5,7 @@ pipeline {
         stage('Restore dependencies') {
             when {
                 expression {
-                    return env.GIT_BRANCH == 'main'
+                    return env.GIT_BRANCH == 'origin/main'
                 }
             }
             steps {
@@ -16,7 +16,7 @@ pipeline {
         stage('Build the App') {
             when {
                 expression {
-                    return env.GIT_BRANCH == 'main'
+                    return env.GIT_BRANCH == 'origin/main'
                 }
             }
             steps {
@@ -27,7 +27,7 @@ pipeline {
         stage('Test the App') {
             when {
                 expression {
-                    return env.GIT_BRANCH == 'main'
+                    return env.GIT_BRANCH == 'origin/main'
                 }
             }
             steps {
